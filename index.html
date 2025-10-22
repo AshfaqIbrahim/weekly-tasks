@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random OTP</title>
+    <style>
+        .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head{
+    text-align: center;
+    margin-top: 150px;
+    color: green;
+}
+
+#btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 80px;
+    color: green;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    transform: .1 ease;
+}
+
+#btn:hover{
+    background-color: grey;
+    color: white;
+    
+}
+
+#demo{
+    text-align: center;
+    color: green;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="head">
+        <h2>Generate OTP</h2>
+    </div>
+    <div class="container">
+
+        <form class="form-bg">
+            <label for="mobile">Mobile Number: </label>
+            <input type="tel" name="mobile" id="mobile" placeholder="Enter your Phone">
+            <br>
+
+            <button id="btn" onclick="generateOtp(event)">Get OTP</button>
+            <p id="demo"></p>
+
+        </form>
+    </div>
+
+
+    <script>
+        
+function generateOtp(event){
+event.preventDefault();
+let  otp = Math.floor(Math.random() * 1000) + 1000;
+document.getElementById('demo').innerText = `Your OTP : ${otp}`
+}
+    </script>
+</body>
+
+</html>
